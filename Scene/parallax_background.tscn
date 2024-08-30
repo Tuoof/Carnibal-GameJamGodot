@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8aws8oyuwqvc"]
+
+[ext_resource type="Texture2D" uid="uid://cysa04ywr7oi3" path="res://Assets/background/plx-1.png" id="1_ap24b"]
+[ext_resource type="Texture2D" uid="uid://bs8dvkk1vgt5h" path="res://Assets/background/plx-2.png" id="2_ltqax"]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ap24b")
+centered = false
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1152, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture = ExtResource("2_ltqax")
+centered = false

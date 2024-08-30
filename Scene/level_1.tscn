@@ -1,0 +1,23 @@
+[gd_scene load_steps=6 format=3 uid="uid://2pctkt25wq5x"]
+
+[ext_resource type="Script" path="res://GDScript/level.gd" id="1_g64ib"]
+[ext_resource type="PackedScene" uid="uid://cdprxh1oth4ri" path="res://Scene/clown.tscn" id="2_6o7ek"]
+[ext_resource type="PackedScene" uid="uid://b7kccxfhl25fm" path="res://Scene/ground.tscn" id="3_paid3"]
+[ext_resource type="PackedScene" uid="uid://b8aws8oyuwqvc" path="res://Scene/parallax_background.tscn" id="4_k5ecg"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_471nl"]
+
+[node name="Level1" type="Node2D"]
+script = ExtResource("1_g64ib")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_471nl")
+autoplay = true
+bus = &"Record"
+
+[node name="Clown" parent="." instance=ExtResource("2_6o7ek")]
+position = Vector2(137, 513)
+
+[node name="Ground" parent="." instance=ExtResource("3_paid3")]
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_k5ecg")]

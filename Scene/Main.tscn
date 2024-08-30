@@ -1,20 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://btsluqnptindj"]
+[gd_scene load_steps=2 format=3 uid="uid://bhfrvtc7ilqgv"]
 
-[ext_resource type="Script" path="res://GDScript/level.gd" id="1_hh81j"]
-[ext_resource type="PackedScene" uid="uid://cdprxh1oth4ri" path="res://Scene/clown.tscn" id="2_binkj"]
-
-[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_471nl"]
+[ext_resource type="PackedScene" uid="uid://2pctkt25wq5x" path="res://Scene/level_1.tscn" id="1_w5jcr"]
 
 [node name="Game" type="Node2D"]
 
 [node name="MainMenu" type="Node2D" parent="."]
 
-[node name="Level1" type="Node2D" parent="."]
-script = ExtResource("1_hh81j")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Level1"]
-stream = SubResource("AudioStreamMicrophone_471nl")
-autoplay = true
-bus = &"Record"
-
-[node name="Clown" parent="Level1" instance=ExtResource("2_binkj")]
+[node name="Level1" parent="." instance=ExtResource("1_w5jcr")]
