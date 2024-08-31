@@ -17,8 +17,8 @@ var obstacle_types := [kambing_node, mobil_node]
 var obstacles : Array
 var last_obstacles
 
-const CLOWN_START_POS := Vector2i(300,485)
-const CAM_START_POS := Vector2i(576, 324)
+const CLOWN_START_POS := Vector2i(300,782)
+const CAM_START_POS := Vector2i(990, 540)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -94,8 +94,8 @@ func generateObstacles():
 			
 			var obstacle_height = obstacle_choosed.get_node("CollisionShape2D").get_shape().get_size().y
 			var obstacle_scale = obstacle_choosed.get_node("CollisionShape2D").scale
-			var obstacle_x = $Camera2D.position.x + (screen_size.x/2) + randi_range(150*i, 200*i+1)
-			var obstacle_y = screen_size.y - ground_height - (obstacle_height * obstacle_scale.y/2) +100
+			var obstacle_x = $Camera2D.position.x + (screen_size.x/2) + randi_range(280*i, 300*i+1)
+			var obstacle_y = screen_size.y - ground_height - (obstacle_height * obstacle_scale.y/2) +50
 			
 			last_obstacles = obstacle_choosed
 			addObstacle(obstacle_choosed, obstacle_x, obstacle_y)

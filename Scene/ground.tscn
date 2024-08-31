@@ -4,27 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://dt2q5s1rqs18o" path="res://Assets/background/Desa/Layer paling luar.png" id="2_1fesl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjyfi"]
-size = Vector2(2296, 148)
+size = Vector2(3849, 177)
 
 [node name="Ground" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 492)
-scale = Vector2(1.19635, 0.6)
+position = Vector2(2, 870)
+scale = Vector2(1.9901, 0.8)
 texture = ExtResource("1_nsulp")
 centered = false
 
 [node name="Fence" type="Sprite2D" parent="."]
-position = Vector2(578, 324)
-scale = Vector2(0.6, 0.6)
+position = Vector2(-3, 190)
+scale = Vector2(1, 0.8)
 texture = ExtResource("2_1fesl")
+centered = false
 
 [node name="Fence2" type="Sprite2D" parent="."]
-position = Vector2(1723, 324)
-scale = Vector2(0.6, 0.6)
+position = Vector2(1909, 190)
+scale = Vector2(1, 0.8)
 texture = ExtResource("2_1fesl")
+centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(1148, 572)
+position = Vector2(1925.5, 976.5)
 shape = SubResource("RectangleShape2D_vjyfi")

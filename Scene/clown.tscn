@@ -1,4 +1,4 @@
-[gd_scene load_steps=215 format=3 uid="uid://cdprxh1oth4ri"]
+[gd_scene load_steps=212 format=3 uid="uid://cdprxh1oth4ri"]
 
 [ext_resource type="Script" path="res://GDScript/clown.gd" id="1_ioaid"]
 [ext_resource type="Texture2D" uid="uid://10x0mj33efgt" path="res://Assets/Character-Hit (30fps).png" id="2_jgf5p"]
@@ -499,18 +499,6 @@ region = Rect2(0, 3204, 1649, 801)
 [sub_resource type="AtlasTexture" id="AtlasTexture_p7haq"]
 atlas = ExtResource("5_y20e0")
 region = Rect2(1649, 3204, 1649, 801)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgema"]
-atlas = ExtResource("5_y20e0")
-region = Rect2(3298, 3204, 1649, 801)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cq0b"]
-atlas = ExtResource("5_y20e0")
-region = Rect2(4947, 3204, 1649, 801)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h810c"]
-atlas = ExtResource("5_y20e0")
-region = Rect2(6596, 3204, 1649, 801)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_swaq4"]
 atlas = ExtResource("3_o17ij")
@@ -1214,15 +1202,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p7haq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vgema")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1cq0b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h810c")
 }],
 "loop": false,
 "name": &"KO",
@@ -1472,17 +1451,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v3qmy"]
-radius = 24.0
-height = 208.0
+radius = 48.0
+height = 288.0
 
 [node name="Clown" type="CharacterBody2D"]
 script = ExtResource("1_ioaid")
 
 [node name="Animated" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(0.29, 0.29)
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_044pe")
-animation = &"GetHit"
+animation = &"Idle"
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_v3qmy")

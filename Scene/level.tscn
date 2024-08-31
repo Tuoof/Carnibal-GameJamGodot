@@ -21,11 +21,13 @@ bus = &"Record"
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_k5ecg")]
 
 [node name="Clown" parent="." instance=ExtResource("2_6o7ek")]
-position = Vector2(132, 385)
+position = Vector2(330, 782)
 
 [node name="Ground" parent="." instance=ExtResource("3_paid3")]
+position = Vector2(-7, 7)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(952, 545)
 script = ExtResource("7_usxma")
 
 [node name="HUD" type="CanvasLayer" parent="."]
