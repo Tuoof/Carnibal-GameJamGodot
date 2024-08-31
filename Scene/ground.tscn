@@ -1,17 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://b7kccxfhl25fm"]
+[gd_scene load_steps=4 format=3 uid="uid://b7kccxfhl25fm"]
 
-[ext_resource type="Texture2D" uid="uid://c1oqrqxusukd2" path="res://Assets/background/ground.png" id="1_2fwb4"]
+[ext_resource type="Texture2D" uid="uid://dr7j386rpf711" path="res://Assets/background/Kota/Layer 4 Jalan2.png" id="1_nsulp"]
+[ext_resource type="Texture2D" uid="uid://dt2q5s1rqs18o" path="res://Assets/background/Desa/Layer paling luar.png" id="2_1fesl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vjyfi"]
-size = Vector2(2298, 88)
+size = Vector2(2296, 148)
 
 [node name="Ground" type="StaticBody2D"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1149, 602)
-shape = SubResource("RectangleShape2D_vjyfi")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 552)
-texture = ExtResource("1_2fwb4")
+position = Vector2(0, 492)
+scale = Vector2(1.19635, 0.6)
+texture = ExtResource("1_nsulp")
 centered = false
+
+[node name="Fence" type="Sprite2D" parent="."]
+position = Vector2(578, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_1fesl")
+
+[node name="Fence2" type="Sprite2D" parent="."]
+position = Vector2(1723, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_1fesl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1148, 572)
+shape = SubResource("RectangleShape2D_vjyfi")

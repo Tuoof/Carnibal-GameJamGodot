@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://2pctkt25wq5x"]
+
+[ext_resource type="Script" path="res://GDScript/Level.gd" id="1_g64ib"]
+[ext_resource type="PackedScene" uid="uid://cdprxh1oth4ri" path="res://Scene/clown.tscn" id="2_6o7ek"]
+[ext_resource type="PackedScene" uid="uid://b7kccxfhl25fm" path="res://Scene/ground.tscn" id="3_paid3"]
+[ext_resource type="PackedScene" uid="uid://b8aws8oyuwqvc" path="res://Scene/parallax_background.tscn" id="4_k5ecg"]
+[ext_resource type="Script" path="res://Scene/camera_2d.gd" id="7_usxma"]
+[ext_resource type="PackedScene" uid="uid://bgevwnesgb1gr" path="res://Scene/game_over.tscn" id="7_xf5l2"]
+[ext_resource type="Texture2D" uid="uid://om01uh760dx5" path="res://Assets/UI/space-key.png" id="8_5pm4d"]
+
+[sub_resource type="AudioStreamMicrophone" id="AudioStreamMicrophone_471nl"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_g64ib")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamMicrophone_471nl")
+autoplay = true
+bus = &"Record"
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("4_k5ecg")]
+
+[node name="Clown" parent="." instance=ExtResource("2_6o7ek")]
+position = Vector2(132, 385)
+
+[node name="Ground" parent="." instance=ExtResource("3_paid3")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("7_usxma")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="HUD"]
+offset_left = 55.0
+offset_top = -1.0
+offset_right = 276.0
+offset_bottom = 50.0
+theme_override_font_sizes/font_size = 32
+text = "SCORE: "
+
+[node name="ColorRect" type="ColorRect" parent="HUD"]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 42.0
+offset_top = -67.0
+offset_right = 207.0
+offset_bottom = -27.0
+grow_vertical = 0
+color = Color(1, 1, 1, 0.27451)
+
+[node name="SpaceIcon" type="Sprite2D" parent="HUD/ColorRect"]
+position = Vector2(39.4675, 20)
+scale = Vector2(0.207285, 0.305195)
+texture = ExtResource("8_5pm4d")
+
+[node name="Label" type="Label" parent="HUD/ColorRect"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 74.0
+offset_top = -19.0
+offset_right = 169.0
+offset_bottom = 20.0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = ": JUMP"
+
+[node name="GameOver" parent="." instance=ExtResource("7_xf5l2")]
+visible = false

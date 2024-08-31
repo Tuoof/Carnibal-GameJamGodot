@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Carnibal_Run"
-run/main_scene="res://Scene/level_1.tscn"
+run/main_scene="res://Scene/level.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
