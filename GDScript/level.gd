@@ -22,6 +22,7 @@ const CAM_START_POS := Vector2i(990, 540)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$BGM.play()
 	initializeGame()
 	initializeMic()
 
@@ -37,6 +38,7 @@ func _process(delta: float) -> void:
 	#print(abs(peakVolume))
 
 func initializeGame():
+	$BGM.play()
 	screen_size = get_window().size
 	ground_height = $Ground.get_node("Sprite2D").texture.get_height()
 	
@@ -83,7 +85,7 @@ func showScore():
 	$HUD/ScoreLabel.text = "SCORE: " + str(final_score)
 	
 func generateObstacles():
-	var rand_obs_spawn = randi_range(1,3)
+	var rand_obs_spawn = randi_range(1,2)
 	
 	if obstacles.is_empty() or last_obstacles.position.x < randi_range(300, 500):
 		for i in rand_obs_spawn:
@@ -113,10 +115,14 @@ func removeObstacle(obstacle):
 func hit_obs(body):
 	if body.name == "Clown":
 		game_over()
-		print("collision")
 
 func game_over():
 	#get_tree().paused = true
+	for obs in obstacles:
+		obs.stopSound()
+		
 	game_running = false
 	$Clown.gameOver()
 	$GameOver.show()
+	$LoseSound.play()
+	$BGM.stop()

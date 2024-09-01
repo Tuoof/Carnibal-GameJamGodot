@@ -5,6 +5,7 @@ var Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$SFX.play()
 	Level = get_parent()
 	AUTO_SPEED += Level.final_score/10
 	print("generate kambing with auto speed: ", AUTO_SPEED)
@@ -17,6 +18,8 @@ func autoMove():
 	if Level.game_running:
 		position.x -= AUTO_SPEED
 
+func stopSound():
+	$SFX.stop()
 
 func _on_body_entered(body: Node2D) -> void:
 	pass # Replace with function body.

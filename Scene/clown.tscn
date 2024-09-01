@@ -1,12 +1,15 @@
-[gd_scene load_steps=212 format=3 uid="uid://cdprxh1oth4ri"]
+[gd_scene load_steps=215 format=3 uid="uid://cdprxh1oth4ri"]
 
 [ext_resource type="Script" path="res://GDScript/clown.gd" id="1_ioaid"]
 [ext_resource type="Texture2D" uid="uid://10x0mj33efgt" path="res://Assets/Character-Hit (30fps).png" id="2_jgf5p"]
 [ext_resource type="Texture2D" uid="uid://csndrpd8olch7" path="res://Assets/Character-Idle (30fps).png" id="2_wi1ln"]
 [ext_resource type="Texture2D" uid="uid://tt36lsb8uyew" path="res://Assets/Character-Jump (30fps).png" id="3_68vua"]
-[ext_resource type="AudioStream" uid="uid://46q6sqfgnyk3" path="res://Assets/Sound/jump.wav" id="3_ng78t"]
 [ext_resource type="Texture2D" uid="uid://b380jfr570nd" path="res://Assets/Character-Walk (30fps).png" id="3_o17ij"]
 [ext_resource type="Texture2D" uid="uid://q6dsups6xpim" path="res://Assets/Character-KO (30fps).png" id="5_y20e0"]
+[ext_resource type="AudioStream" uid="uid://bn5hmvng8kbdo" path="res://Assets/Sound/Jumping.mp3" id="7_ic5ha"]
+[ext_resource type="AudioStream" uid="uid://c4sw1bglbxvx1" path="res://Assets/Sound/Hit.mp3" id="8_ndllr"]
+[ext_resource type="AudioStream" uid="uid://ds1y8p02ggrsp" path="res://Assets/Sound/Landing.mp3" id="9_onxif"]
+[ext_resource type="AudioStream" uid="uid://ysso8dfnlmgf" path="res://Assets/Sound/Bicycle Pedaling.mp3" id="10_q1mhn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8uap"]
 atlas = ExtResource("2_jgf5p")
@@ -1467,4 +1470,14 @@ animation = &"Idle"
 shape = SubResource("CapsuleShape2D_v3qmy")
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_ng78t")
+stream = ExtResource("7_ic5ha")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ndllr")
+
+[node name="LandSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_onxif")
+
+[node name="PedalingSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_q1mhn")
+autoplay = true

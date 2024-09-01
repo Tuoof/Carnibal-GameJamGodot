@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8f7gijm28pdb"
+path="res://.godot/imported/Fitting Clown Music.mp3-7a7d818716e87a94c6f01c9efa940784.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Fitting Clown Music.mp3"
+dest_files=["res://.godot/imported/Fitting Clown Music.mp3-7a7d818716e87a94c6f01c9efa940784.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

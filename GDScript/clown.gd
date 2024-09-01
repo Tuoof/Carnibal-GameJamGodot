@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 const AUTO_SPEED = 2.5
 const SPEED = 300.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -800.0
 const EXTENT_JUMP_VELOCITY = -200.0
 
 const height_to_extent = 40.0
@@ -10,7 +10,9 @@ var onGround_position : float
 var after_ceiling = false
 var isJumping = false
 
-
+func _ready() -> void:
+	$PedalingSound.play()
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -54,6 +56,8 @@ func jump_sound(desibel: int):
 		after_ceiling = false
 		isJumping = false
 		$Animated.play("Run")
+		$LandSound.play()
+		
 		
 		if desibel > -20:
 			if not isJumping:
@@ -62,6 +66,9 @@ func jump_sound(desibel: int):
 				print("velocity: ", JUMP_VELOCITY, " with volume: ", desibel)
 				$Animated.play("Jump")
 				$JumpSound.play()
+				$PedalingSound.stop()
+			else:
+				$PedalingSound.play()
 	#else:
 		#var current_position = get_position().y
 		#var target_height = onGround_position - height_to_extent
@@ -87,4 +94,6 @@ func move():
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		
 func gameOver():
+	$HitSound.play()
 	$Animated.play("KO")
+	$PedalingSound.stop()

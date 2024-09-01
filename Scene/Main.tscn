@@ -1,10 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://bhfrvtc7ilqgv"]
+[gd_scene load_steps=14 format=3 uid="uid://bhfrvtc7ilqgv"]
 
 [ext_resource type="Script" path="res://Scene/main.gd" id="1_saq02"]
 [ext_resource type="Texture2D" uid="uid://cxv727ligxmjy" path="res://Assets/UI/MainMenu/MENU BG UI.png" id="1_tnjv6"]
 [ext_resource type="Texture2D" uid="uid://bgc27i2gyuj1e" path="res://Assets/UI/MainMenu/Judul.png" id="2_n5xlg"]
 [ext_resource type="Texture2D" uid="uid://b627hjvh8b1wb" path="res://Assets/UI/MainMenu/Start Revisi.png" id="3_6xmag"]
 [ext_resource type="Texture2D" uid="uid://crukjvrcx7qas" path="res://Assets/UI/MainMenu/Quit Revisi.png" id="4_ijux6"]
+[ext_resource type="AudioStream" uid="uid://8f7gijm28pdb" path="res://Assets/Sound/Fitting Clown Music.mp3" id="6_3fg6a"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_5w6nt"]
+file = "res://Assets/Video/LORE GJ.ogg"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjr5n"]
 texture = ExtResource("3_6xmag")
@@ -31,15 +35,23 @@ texture = ExtResource("4_ijux6")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_saq02")
 
-[node name="MenuBgUi" type="Sprite2D" parent="."]
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = SubResource("VideoStreamTheora_5w6nt")
+
+[node name="UI_Canvas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="MenuBgUi" type="Sprite2D" parent="UI_Canvas"]
 texture = ExtResource("1_tnjv6")
 centered = false
 
-[node name="Judul" type="Sprite2D" parent="."]
+[node name="Judul" type="Sprite2D" parent="UI_Canvas"]
 position = Vector2(512, 529)
 texture = ExtResource("2_n5xlg")
 
-[node name="StartButton" type="Button" parent="."]
+[node name="StartButton" type="Button" parent="UI_Canvas"]
 offset_left = 1401.0
 offset_top = 599.0
 offset_right = 1873.0
@@ -49,7 +61,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_xjr5n")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_d42j6")
 theme_override_styles/normal = SubResource("StyleBoxTexture_hf2w8")
 
-[node name="QuitButton" type="Button" parent="."]
+[node name="QuitButton" type="Button" parent="UI_Canvas"]
 offset_left = 1408.0
 offset_top = 823.0
 offset_right = 1778.0
@@ -59,5 +71,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_k762w")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_0i740")
 theme_override_styles/normal = SubResource("StyleBoxTexture_v5iru")
 
-[connection signal="button_up" from="StartButton" to="." method="_on_start_button_button_up"]
-[connection signal="button_up" from="QuitButton" to="." method="_on_quit_button_button_up"]
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3fg6a")
+volume_db = -5.0
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="button_up" from="UI_Canvas/StartButton" to="." method="_on_start_button_button_up"]
+[connection signal="button_up" from="UI_Canvas/QuitButton" to="." method="_on_quit_button_button_up"]

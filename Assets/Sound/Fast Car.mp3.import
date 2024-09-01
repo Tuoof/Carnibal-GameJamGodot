@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqq8r7gf7udq"
+path="res://.godot/imported/Fast Car.mp3-974e7b4adf3d9a2076ec1ead4feda054.mp3str"
+
+[deps]
+
+source_file="res://Assets/Sound/Fast Car.mp3"
+dest_files=["res://.godot/imported/Fast Car.mp3-974e7b4adf3d9a2076ec1ead4feda054.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

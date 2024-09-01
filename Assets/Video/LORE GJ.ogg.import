@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bedp5hvxwq508"
+path="res://.godot/imported/LORE GJ.ogg-bdeb1427477e1333cf4a2f9fe1d64aab.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Video/LORE GJ.ogg"
+dest_files=["res://.godot/imported/LORE GJ.ogg-bdeb1427477e1333cf4a2f9fe1d64aab.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

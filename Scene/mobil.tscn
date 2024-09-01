@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://dnocbfx3lcnom"]
+[gd_scene load_steps=58 format=3 uid="uid://dnocbfx3lcnom"]
 
 [ext_resource type="Script" path="res://Scene/mobil.gd" id="1_7rmel"]
 [ext_resource type="Texture2D" uid="uid://blyrfbjjg4xyr" path="res://Assets/Mobil Kecil (30fps).png" id="2_bte8l"]
+[ext_resource type="AudioStream" uid="uid://db77aaaq8r17x" path="res://Assets/Sound/Car Horn.mp3" id="3_o7ffl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ao1hb"]
 atlas = ExtResource("2_bte8l")
@@ -391,3 +392,7 @@ frame_progress = 0.412468
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-22, 6)
 shape = SubResource("RectangleShape2D_qypad")
+
+[node name="SFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_o7ffl")
+volume_db = -15.0
