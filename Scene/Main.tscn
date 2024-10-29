@@ -8,7 +8,8 @@
 [ext_resource type="AudioStream" uid="uid://8f7gijm28pdb" path="res://Assets/Sound/Fitting Clown Music.mp3" id="6_3fg6a"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_5w6nt"]
-file = "res://Assets/Video/LORE GJ.ogg"
+resource_local_to_scene = true
+file = "res://Assets/Video/LORE GJ.ogv"
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xjr5n"]
 texture = ExtResource("3_6xmag")
